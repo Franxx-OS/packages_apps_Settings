@@ -51,4 +51,7 @@
     <!-- Left volume panel -->
     <string name="volume_panel_on_left_title">Show volume panel on left</string>
     <string name="volume_panel_on_left_summary">Move volume panel to the left side of the screen</string>
+
+    <!-- Name of Refresh Rate controls category in Display Settings [CHAR LIMIT=none] -->
+    <string name="category_name_refresh_rate_controls">Refresh Rate</string>
 </resources>
