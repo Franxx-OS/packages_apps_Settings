@@ -19,7 +19,8 @@ package com.android.settings;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.os.Bundle;
-
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceCategory;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.display.BrightnessLevelPreferenceController;
 import com.android.settings.display.CameraGesturePreferenceController;
@@ -33,6 +34,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
+import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,11 @@ import java.util.List;
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class DisplaySettings extends DashboardFragment {
     private static final String TAG = "DisplaySettings";
+
+    private static final String REFRESH_RATE_CATTEGORY = "refreshratestuff";
+
+    private PreferenceCategory mRefreshRateCategory;
+    private Context mContext;
 
     @Override
     public int getMetricsCategory() {
@@ -59,6 +66,12 @@ public class DisplaySettings extends DashboardFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        mContext = getActivity();
+        final PreferenceScreen prefSet = getPreferenceScreen();
+        mRefreshRateCategory = findPreference(REFRESH_RATE_CATTEGORY);
+        if (!mContext.getResources().getBoolean(R.bool.config_show_smooth_display)){
+           prefSet.removePreference(mRefreshRateCategory);
+        }
     }
 
     @Override
