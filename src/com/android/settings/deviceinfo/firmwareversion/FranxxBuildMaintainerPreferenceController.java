@@ -46,8 +46,7 @@ public class FranxxBuildMaintainerPreferenceController extends BasePreferenceCon
     }
 
     public CharSequence getSummary() {
-        String rom = SystemProperties.get(ROM_PROPERTY,
-                this.mContext.getString(R.string.device_info_default));
-        return rom;
+        return SystemProperties.get(KEY_FRANXX_MAINTAINER_PROP,
+             mContext.getString(R.string.unknown));
     }
 }

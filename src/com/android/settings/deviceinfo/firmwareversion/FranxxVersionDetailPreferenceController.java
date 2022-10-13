@@ -56,7 +56,7 @@ public class FranxxVersionDetailPreferenceController extends BasePreferenceContr
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_FRANXX_BASE_VERSION,
+        return SystemProperties.get(KEY_FRANXX_BUILD_VERSION_PROP,
                 mContext.getString(R.string.unknown));
     }
 }
