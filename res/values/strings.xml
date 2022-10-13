@@ -14207,4 +14207,11 @@
     <string name="game_space_title">Game Space</string>
     <string name="game_space_summary">Enhance your gaming experience</string>
 
+    <!-- Device Name -->
+    <string name="about_device_name">About device name</string>
+    <!-- Platform Version -->
+    <string name="platform_revision">Platform</string>
+    <!-- Total Ram -->
+    <string name="total_ram">Total ram</string>
+
 </resources>
