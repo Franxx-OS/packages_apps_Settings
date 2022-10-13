@@ -43,7 +43,7 @@ public class FranxxVersionDetailPreferenceController extends BasePreferenceContr
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_FRANXX_BASE_VERSION = "org.franxx.version";
+    private static final String KEY_FRANXX_BUILD_VERSION_PROP = "org.franxx.build_version";
 
     public FranxxVersionDetailPreferenceController(Context context, String key) {
         super(context, key);

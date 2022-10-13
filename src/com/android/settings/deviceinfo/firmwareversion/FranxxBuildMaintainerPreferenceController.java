@@ -31,7 +31,7 @@ import com.android.settings.core.BasePreferenceController;
 
 public class FranxxBuildMaintainerPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "LessAOSPBuildMaintainerCtrl";
+    private static final String TAG = "FranxxBuildMaintainerCtrl";
     private static final String KEY_FRANXX_MAINTAINER_PROP = "ro.franxx.maintainer";
 
     private String mDeviceMaintainer;
@@ -45,8 +45,9 @@ public class FranxxBuildMaintainerPreferenceController extends BasePreferenceCon
         return AVAILABLE ;
     }
 
-    @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_FRANXX_MAINTAINER_PROP, mContext.getString(R.string.unknown));
+        String rom = SystemProperties.get(ROM_PROPERTY,
+                this.mContext.getString(R.string.device_info_default));
+        return rom;
     }
 }
