@@ -43,7 +43,7 @@ public class FranxxVersionDetailPreferenceController extends BasePreferenceContr
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_FRANXX_BUILD_VERSION_PROP = "org.franxx.build_version";
+    private static final String KEY_FRANXX_BUILD_TYPE_PROP = "org.franxx.build_type";
 
     public FranxxVersionDetailPreferenceController(Context context, String key) {
         super(context, key);
@@ -56,7 +56,7 @@ public class FranxxVersionDetailPreferenceController extends BasePreferenceContr
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_FRANXX_BUILD_VERSION_PROP,
+        return SystemProperties.get(KEY_FRANXX_BUILD_TYPE_PROP,
                 mContext.getString(R.string.unknown));
     }
 }
